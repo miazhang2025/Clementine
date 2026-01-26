@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const EmailRefiner = () => {
-    const [draft, setDraft] = useState('');
-    const [instructions, setInstructions] = useState('');
-    const [refinedText, setRefinedText] = useState('');
+interface EmailRefinerProps {
+    draft: string;
+    setDraft: (value: string) => void;
+    instructions: string;
+    setInstructions: (value: string) => void;
+    onRefine: () => void;
+    refinedText: string;
+}
 
-    const handleRefine = () => {
-        // Placeholder for refinement logic
-        const refined = `Refined Email:\n\n${draft}\n\nInstructions: ${instructions}`;
-        setRefinedText(refined);
-    };
-
+const EmailRefiner: React.FC<EmailRefinerProps> = ({
+    draft,
+    setDraft,
+    instructions,
+    setInstructions,
+    onRefine,
+    refinedText
+}) => {
     return (
         <div className="p-4">
             <h1 className="text-2xl font-bold mb-4">Email Refiner</h1>
@@ -28,7 +34,7 @@ const EmailRefiner = () => {
             />
             <button
                 className="bg-blue-500 text-white px-4 py-2 rounded"
-                onClick={handleRefine}
+                onClick={onRefine}
             >
                 Refine Email
             </button>

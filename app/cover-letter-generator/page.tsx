@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 
 const CoverLetterGenerator = () => {
@@ -12,12 +13,12 @@ const CoverLetterGenerator = () => {
         }
     }, [jobDescription]);
 
-    const generateCoverLetter = (jobDesc, resume) => {
+    const generateCoverLetter = (jobDesc: string, resume: string) => {
         // Placeholder logic for generating cover letter
         setCoverLetter(`Dear Hiring Manager,\n\nI am writing to express my interest in the position described as: ${jobDesc}.\n\nBest regards,\n[Your Name]`);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const masterResume = localStorage.getItem('masterResume');
         if (masterResume) {
