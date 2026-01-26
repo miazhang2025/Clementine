@@ -1,0 +1,1 @@
+export { default } from '../../../tools/cover-letter/page';

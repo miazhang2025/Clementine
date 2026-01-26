@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-caveat: "Caveat", cursive;
+  --font-mono: "IBM Plex Mono", monospace;
+  --color-background: #E6E2DA;
+  --color-theme: #E8B009;
+  --color-text: #202020;
+}
+
+:root {
+	--color-background: #E6E2DA;
+	--color-theme: #E8B009;
+	--color-text: #202020;
+}
+
+
+body {
+	background-color: var(--color-background);
+	color: var(--color-text);
+    cursor: none; /* Hide default cursor */
+}
+
+/* Ensure all interactive elements inherit the hidden cursor so the custom one takes over */
+a, button, input, select, textarea, .cursor-pointer {
+    cursor: none;
+}
+
+.theme {
+	color: var(--color-theme);
+}
+
+/* Custom styles can be added below */
+
+@layer components {
+  .btn {
+    @apply px-6 py-2.5 rounded-xl font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  }
+  
+  .btn-primary {
+    @apply hover:shadow-md hover:-translate-y-0.5 active:translate-y-0;
+    background-color: var(--color-theme);
+    color: var(--color-text);
+  }
+  
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 shadow-sm;
+    color: var(--color-text);
+  }
+  
+  .input-field {
+    @apply w-full p-4 rounded-xl border border-gray-200 bg-white/80 focus:bg-white placeholder:text-gray-400 focus:outline-none focus:ring-2 transition-all duration-200 shadow-sm;
+    color: var(--color-text);
+    /* Manually handle theme focus colors to avoid unknown utility error */
+    --tw-ring-color: var(--color-theme); 
+    border-color: #e5e7eb; /* gray-200 */
+  }
+  
+  .input-field:focus {
+     border-color: var(--color-theme);
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-8;
+  }
+
+  .label {
+    @apply block text-sm font-bold mb-2 uppercase tracking-wide;
+    color: var(--color-text);
+    opacity: 0.8;
+  }
+}
