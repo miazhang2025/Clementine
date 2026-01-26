@@ -1,6 +1,6 @@
 # Clementine - Personal Assistant Toolbox
 
-Clementine is a modular web application designed to assist users with various personal tasks, including email refinement, cover letter generation, and meal planning. Built with Next.js, Tailwind CSS, and Shadcn/UI components, this application provides a user-friendly interface and efficient tools to enhance productivity.
+Clementine is a modular web application designed to assist MIA with various personal tasks, including email refinement, cover letter generation, and meal planning. Built with Next.js, Tailwind CSS, and Shadcn/UI components, this application provides a user-friendly interface and efficient tools to enhance productivity.
 
 ## Features
 
