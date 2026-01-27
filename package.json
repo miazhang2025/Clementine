@@ -19,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.18",
+    "jspdf": "^4.0.0",
     "lucide-react": "^0.263.1",
     "next": "^15.1.6",
     "react": "18.3.1",
