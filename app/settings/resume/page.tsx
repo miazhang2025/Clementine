@@ -4,17 +4,21 @@ import { useEffect, useState } from "react";
 export default function ResumeSettings() {
   const [resume, setResume] = useState("");
   const [apiKey, setApiKey] = useState("");
+  const [maintenanceCalories, setMaintenanceCalories] = useState("");
 
   useEffect(() => {
     const savedResume = localStorage.getItem("clementine_resume");
     const savedKey = localStorage.getItem("clementine_api_key");
+    const savedMaintenance = localStorage.getItem("healthTracker_maintenance");
     if (savedResume) setResume(savedResume);
     if (savedKey) setApiKey(savedKey);
+    if (savedMaintenance) setMaintenanceCalories(savedMaintenance);
   }, []);
 
   function handleSave() {
     localStorage.setItem("clementine_resume", resume);
     localStorage.setItem("clementine_api_key", apiKey);
+    localStorage.setItem("healthTracker_maintenance", maintenanceCalories);
     alert("Settings saved!");
   }
 
@@ -46,6 +50,18 @@ export default function ResumeSettings() {
                 onChange={e => setResume(e.target.value)}
                 placeholder="Paste your master resume here..."
             />
+        </div>
+
+        <div>
+            <label className="label">Daily Maintenance Calories</label>
+            <input
+                type="number"
+                className="input-field"
+                value={maintenanceCalories}
+                onChange={e => setMaintenanceCalories(e.target.value)}
+                placeholder="e.g., 2000"
+            />
+            <p className="text-xs text-text/50 mt-2">Used for automatic daily calorie tracking in Healthy Life Tracker.</p>
         </div>
 
         <button

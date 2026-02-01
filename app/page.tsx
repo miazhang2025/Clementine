@@ -1,5 +1,5 @@
 import { ToolCard } from "../components/ToolCard";
-import { MailCheck, FileText, Utensils, MessageSquare } from "lucide-react";
+import { MailCheck, FileText, Utensils, MessageSquare, Heart } from "lucide-react";
 
 export default function Home() {
   return (
@@ -32,6 +32,12 @@ export default function Home() {
           description="Answer career questions based on your experience."
           href="/tools/interview-qa"
           icon={MessageSquare}
+        />
+        <ToolCard
+          title="Healthy Life Tracker"
+          description="Generate workout plans and track diet & exercise."
+          href="/tools/healthy-life-tracker"
+          icon={Heart}
         />
       </div>
     </section>
