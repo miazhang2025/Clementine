@@ -65,13 +65,14 @@ const HealthyLifeTrackerPage = () => {
         const maintenanceCalories = localStorage.getItem('healthTracker_maintenance');
         
         if (maintenanceCalories && lastMaintenanceLog !== today) {
-            const newEntry: DietEntry = {
+            const newEntry: WorkoutEntry = {
                 id: `maint-${Date.now()}`,
                 date: today,
-                meal: 'Daily Maintenance Calories',
-                caloriesConsumed: parseInt(maintenanceCalories),
+                exercise: 'Daily Maintenance Calories',
+                duration: 0,
+                caloriesBurned: parseInt(maintenanceCalories),
             };
-            setDietEntries(prev => [...prev, newEntry]);
+            setWorkoutEntries(prev => [...prev, newEntry]);
             setLastMaintenanceLog(today);
             localStorage.setItem('healthTracker_lastMaintenanceLog', today);
         }
